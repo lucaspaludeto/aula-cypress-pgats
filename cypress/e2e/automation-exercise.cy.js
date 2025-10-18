@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-//import 'cypress-file-upload'
 
 import userData from '../fixtures/example.json'
 import { getRandomNumber, getRandomEmail, generateUser } from '../support/helpers'
@@ -29,7 +28,6 @@ describe('Automation Exercise', () => {
 
 
     it.only('Cadastrar um usuário', () => {
-        //const timestamp = new Date().getTime()
 
         cy.get('[data-qa="signup-name"]').type(user.nome)
         cy.get('[data-qa="signup-email"]').type(user.email)
@@ -113,7 +111,6 @@ describe('Automation Exercise', () => {
         cy.get('[data-qa="email"]').type(userData.email);
         cy.get('[data-qa="subject"]').type('Teste Campo Subject');
         cy.get('[data-qa="message"]').type('Testando o campo de mensagem...');
-        //cy.get('input[name="upload_file"]').attachFile(['imagem-exemplo.jpg'])
 
         cy.fixture('imagem-exemplo.jpg').as('arquivo')
         cy.get('input[type=file]').selectFile('@arquivo')
